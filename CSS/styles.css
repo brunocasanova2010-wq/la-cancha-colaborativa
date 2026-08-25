@@ -1,0 +1,294 @@
+/* ===================================================
+   LA CANCHA COLABORATIVA — TP8
+   Paleta: parquet oscuro + acentos por equipo
+   #14110D  cancha (fondo base)
+   #F1E6CF  crema tablero (texto claro)
+   #CE1126  rojo Bulls
+   #552583 / #FDB927  violeta / oro Lakers
+   #860038 / #FDBB30  granate / oro Cavaliers
+   =================================================== */
+
+:root {
+  --court: #14110d;
+  --court-line: #2a231a;
+  --cream: #f1e6cf;
+  --cream-dim: #cbbfa5;
+  --ink: #0b0906;
+  --accent: #e8792c; /* naranja pelota, uso puntual */
+
+  --bulls: #ce1126;
+  --lakers-1: #552583;
+  --lakers-2: #fdb927;
+  --cavs-1: #860038;
+  --cavs-2: #fdbb30;
+
+  --font-display: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--court);
+  color: var(--cream);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---------- HERO ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5.5rem 1.5rem 4.5rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(232, 121, 44, 0.16), transparent 60%),
+    var(--court);
+  border-bottom: 1px solid var(--court-line);
+}
+
+.hero-pitch {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    /* círculo central de la cancha */
+    radial-gradient(circle at 50% 100%, transparent 0, transparent 118px, rgba(241,230,207,0.08) 119px, rgba(241,230,207,0.08) 121px, transparent 122px),
+    /* línea de tres */
+    radial-gradient(circle at 50% 100%, transparent 0, transparent 238px, rgba(241,230,207,0.06) 239px, rgba(241,230,207,0.06) 241px, transparent 242px);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 46rem; margin: 0 auto; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(232, 121, 44, 0.4);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* ---------- SECCIONES GENERALES ---------- */
+
+main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+section + section { margin-top: 4.5rem; }
+
+section h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--accent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.section-hint {
+  color: var(--cream-dim);
+  margin: 0 0 2rem;
+  max-width: 40rem;
+}
+
+/* ---------- PLANTEL / ROSTER ---------- */
+
+.roster-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--court-line);
+}
+
+.roster-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.9rem 0.2rem;
+  border-bottom: 1px solid var(--court-line);
+  font-size: 1.05rem;
+}
+
+.roster-list .number {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--accent);
+  min-width: 2.4ch;
+  text-align: right;
+}
+
+.badge {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  border: 1px solid var(--court-line);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+}
+
+/* ---------- GALERÍA / TARJETAS ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  background: #1b1712;
+  border: 1px solid var(--court-line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.45);
+}
+
+.card-media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body { padding: 1.3rem 1.4rem 1.6rem; }
+
+.card-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--cream-dim);
+  font-size: 0.95rem;
+}
+
+.card p code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(241, 230, 207, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.card--placeholder {
+  background: transparent;
+  border: 1px dashed var(--court-line);
+}
+
+.card--placeholder:hover,
+.card--placeholder:focus-within {
+  border-color: var(--accent);
+}
+
+.card-media--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(241, 230, 207, 0.04);
+}
+
+.placeholder-icon {
+  font-size: 3.5rem;
+  opacity: 0.5;
+}
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem 3rem;
+  color: var(--cream-dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--court-line);
+}
+
+/* ---------- ACCESIBILIDAD ---------- */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 40rem) {
+  .hero { padding: 4rem 1.25rem 3.25rem; }
+  main { padding: 3rem 1.25rem; }
+  section h2 { font-size: 1.6rem; }
+}
