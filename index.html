@@ -8,10 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
   <header class="hero">
     <div class="hero-pitch"></div>
+
     <div class="hero-content">
       <span class="eyebrow">Trabajo Práctico 8 · FSD</span>
       <h1>La Cancha Colaborativa</h1>
@@ -20,70 +22,122 @@
   </header>
 
   <main>
+
     <section class="roster" aria-labelledby="roster-title">
       <h2 id="roster-title"><span class="tag">Plantel</span> Participantes</h2>
-      <p class="section-hint">Cada compañero/a que colabora suma su nombre a esta alineación.</p>
+
+      <p class="section-hint">
+        Cada compañero/a que colabora suma su nombre a esta alineación.
+      </p>
+
       <!--
         AGREGÁ TU NOMBRE ACÁ (Parte I, paso 6).
         Cuando colabores en el repo de otra persona (Parte II), sumá tu nombre
         como un nuevo <li> respetando este mismo formato.
       -->
+
       <ol class="roster-list">
         <li><span class="number">10</span> Benjamin Correa <span class="badge">Autor/a</span></li>
         <li><span class="number">30</span> Santiago Olive <span class="badge">Participante</span></li>
-
       </ol>
     </section>
 
+
     <section class="gallery" aria-labelledby="gallery-title">
-      <h2 id="gallery-title"><span class="tag">Galería</span> Tarjetas del equipo</h2>
-      <p class="section-hint">Una tarjeta por jugador, club o momento basquetbolero. Mantené el mismo formato al agregar la tuya.</p>
+
+      <h2 id="gallery-title">
+        <span class="tag">Galería</span> Tarjetas del equipo
+      </h2>
+
+      <p class="section-hint">
+        Una tarjeta por jugador, club o momento basquetbolero. Mantené el mismo formato al agregar la tuya.
+      </p>
 
       <!--
         AGREGÁ TU PRIMERA TARJETA ACÁ (Parte I, paso 7).
         Cada <article class="card"> nueva debe respetar esta misma estructura:
         imagen + título + descripción breve. Así se mantiene la organización visual.
       -->
+
       <div class="card-grid">
+
         <article class="card">
           <div class="card-media">
             <img src="img/lebroooon.jpg" alt="LeBron James con la camiseta de Cleveland Cavaliers">
           </div>
+
           <div class="card-body">
             <span class="card-kicker">#23 · Cleveland Cavaliers</span>
             <h3>LeBron James</h3>
-            <p>De Akron a máximo anotador histórico de la liga. Fuerza, visión de juego y una longevidad que rompió todos los pronósticos.</p>
+            <p>
+              De Akron a máximo anotador histórico de la liga. Fuerza, visión de juego
+              y una longevidad que rompió todos los pronósticos.
+            </p>
           </div>
         </article>
+
 
         <article class="card">
           <div class="card-media">
             <img src="img/stephen-curry.png" alt="Stephen Curry con la camiseta número 30 de Golden State Warriors">
           </div>
+
           <div class="card-body">
             <span class="card-kicker">#30 · Golden State Warriors</span>
             <h3>Stephen Curry</h3>
-            <p>Base de los Golden State Warriors y uno de los mejores tiradores de la historia de la NBA. Su triple cambió la manera de jugar al básquet.</p>
+            <p>
+              Base de los Golden State Warriors y uno de los mejores tiradores de la
+              historia de la NBA. Su triple cambió la manera de jugar al básquet.
+            </p>
           </div>
         </article>
+
+
+        <!-- Nueva tarjeta: Boston Celtics -->
+        <article class="card">
+          <div class="card-media">
+            <img src="img/OIP (2).jpg" alt="Larry Bird con la camiseta de Boston Celtics">
+          </div>
+
+          <div class="card-body">
+            <span class="card-kicker">#33 · Boston Celtics</span>
+            <h3>Larry Bird</h3>
+            <p>
+              Una de las mayores leyendas de los Boston Celtics y de la NBA.
+              Gran tirador, pasador y competidor, ganó tres campeonatos con Boston
+              y fue elegido tres veces MVP de la liga.
+            </p>
+          </div>
+        </article>
+
 
         <!-- Tarjeta de ejemplo para quien se suma al repositorio: no la borres, cloná esta estructura. -->
         <article class="card card--placeholder">
           <div class="card-media card-media--placeholder" aria-hidden="true">
             <span class="placeholder-icon">🏀</span>
           </div>
+
           <div class="card-body">
             <span class="card-kicker">Tu turno</span>
             <h3>Sumá tu jugador/a</h3>
-            <p>Hacé fork, agregá tu propia tarjeta con imagen en <code>img/</code> y abrí tu Pull Request para que aparezca acá.</p>
+            <p>
+              
+              <code>img/</code> y abrí tu Pull Request para que aparezca acá.
+            </p>
           </div>
         </article>
+
       </div>
     </section>
+
   </main>
 
+
   <footer class="site-footer">
-    <p>Colegio del Carmen · Funcionamiento de los Sistemas Digitales · Prof. Roberto Argumedo</p>
+    <p>
+      Colegio del Carmen · Funcionamiento de los Sistemas Digitales ·
+      Prof. Roberto Argumedo
+    </p>
   </footer>
 
 </body>
